@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUX Tarot Prompts - 78 Cards, 4 Styles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-elevated: #1a1a25;
+            --border: #2a2a3a;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6a6a7a;
+            --accent-gold: #d4af37;
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --accent-cyan: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 50%);
+            animation: shimmer 10s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(-25%, -25%) rotate(0deg); }
+            50% { transform: translate(-25%, -25%) rotate(180deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-gold), #f5e6d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Controls */
+        .controls {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .controls-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border-radius: 8px;
+            width: 250px;
+            font-family: inherit;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Category Headers */
+        .category {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .category-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .category-count {
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            padding: 1rem 1.25rem;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-number {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        /* Style Tabs */
+        .style-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .style-tab {
+            padding: 0.375rem 0.875rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .style-tab:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .style-tab.active {
+            border-color: transparent;
+        }
+
+        .style-tab.traditional.active { background: linear-gradient(135deg, #4a3f6b, #1a1a2e); color: #d4af37; }
+        .style-tab.lowbrow.active { background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; }
+        .style-tab.eighties.active { background: linear-gradient(135deg, #06b6d4, #f97316); color: #fff; }
+        .style-tab.bw.active { background: linear-gradient(135deg, #333, #111); color: #fff; }
+
+        /* Prompt Box */
+        .prompt-box {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .prompt-text {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-height: 120px;
+            overflow-y: auto;
+            margin-bottom: 0.75rem;
+            padding-right: 0.5rem;
+        }
+
+        .prompt-text::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .prompt-text::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .copy-btn {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--bg-dark);
+            padding: 4rem 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .guide-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .guide-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--accent-gold), #f5e6d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .guide-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .guide-block h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        /* Method Cards */
+        .method-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .method-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .method-card.recommended {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .method-card.recommended::before {
+            content: 'Recommended';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .method-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .method-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .method-card p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .method-tag {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        /* Settings Table */
+        .settings-table {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .setting-row:last-child {
+            border-bottom: none;
+        }
+
+        .setting-name {
+            color: var(--text-secondary);
+        }
+
+        .setting-value {
+            color: var(--accent-gold);
+            font-weight: 500;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Style Explained */
+        .style-explained {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .style-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .style-header {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .style-header.traditional {
+            background: linear-gradient(135deg, #4a3f6b, #1a1a2e);
+        }
+
+        .style-header.lowbrow {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+        }
+
+        .style-header.eighties {
+            background: linear-gradient(135deg, #06b6d4, #f97316);
+        }
+
+        .style-header.bw {
+            background: linear-gradient(135deg, #333, #111);
+        }
+
+        .style-header h4 {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .style-badge {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .style-card p {
+            padding: 1rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .color {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+        }
+
+        /* Tips List */
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tips-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Workflow */
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: var(--text-secondary);
+        }
+
+        /* Commercial Text */
+        .commercial-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        /* Card Image Gallery */
+        .card-image-gallery {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+
+        .card-image-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .card-image-gallery::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .card-image {
+            flex: 0 0 auto;
+            width: 140px;
+            aspect-ratio: 3/5;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-dark);
+            display: none;
+        }
+
+        .card-image.visible {
+            display: block;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-image.empty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .card-image-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: var(--text-primary);
+            font-size: 0.625rem;
+            padding: 0.25rem;
+            text-align: center;
+        }
+
+        .card-image {
+            position: relative;
+        }
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            color: #10b981;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .filters {
+                justify-content: center;
+            }
+        }
+
+        /* Hidden state */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">FLUX Tarot Prompts</h1>
+            <p class="tagline">78 Cards × 4 Styles = 312 Unique Prompts for AI Art Generation</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">78</div>
+                    <div class="stat-label">Tarot Cards</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Art Styles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">312</div>
+                    <div class="stat-label">Total Prompts</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="controls-inner">
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">← Browse Cards</a>
+                <span class="nav-link" style="color: var(--text-primary); cursor: default;">How to Use</span>
+            </div>
+            <div class="search-box">
+                <!-- Search disabled on guide page -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main" id="mainContent">
+        <div style="text-align: center; padding: 3rem 1rem; max-width: 600px; margin: 0 auto;">
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Looking for the card prompts?</p>
+            <a href="index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent-gold); color: var(--bg-dark); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                ← Browse All 78 Cards
+            </a>
+        </div>
+
+        <!-- Guide Section -->
+        <section class="guide-section" id="guide">
+            <div class="guide-content">
+                <h2 class="guide-title">How to Use Your Prompts</h2>
+            
+            <!-- Quick Start Methods -->
+            <div class="guide-block">
+                <h3>5 Ways to Generate Your Cards</h3>
+                <div class="method-cards">
+                    <div class="method-card">
+                        <span class="method-emoji">🤗</span>
+                        <h4>1. Hugging Face (Easiest)</h4>
+                        <p>Free, no signup required. Visit huggingface.co/spaces, search "FLUX", enter your prompt and generate.</p>
+                        <span class="method-tag">Free</span>
+                    </div>
+                    <div class="method-card">
+                        <span class="method-emoji">🔮</span>
+                        <h4>2. Mage.space</h4>
+                        <p>Browser-based, no install. Go to mage.space, select FLUX model, paste prompt, generate and download.</p>
+                        <span class="method-tag">Free</span>
+                    </div>
+                    <div class="method-card">
+                        <span class="method-emoji">✨</span>
+                        <h4>3. Leonardo.ai</h4>
+                        <p>Create account, daily free credits. Select Phoenix or FLUX model, generate with 3:4 aspect ratio.</p>
+                        <span class="method-tag">Free Tier</span>
+                    </div>
+                    <div class="method-card recommended">
+                        <span class="method-emoji">⚡</span>
+                        <h4>4. Replicate (Recommended)</h4>
+                        <p>Best quality, fastest results. Add $10-20 credits, search "FLUX Pro", use settings: Aspect 3:4, Guidance 5-6, Steps 40-50.</p>
+                        <span class="method-tag">Pay Per Use</span>
+                    </div>
+                    <div class="method-card">
+                        <span class="method-emoji">💻</span>
+                        <h4>5. ComfyUI (Advanced)</h4>
+                        <p>Run locally with GPU. Install from comfyui.org, download FLUX workflow, full control, no rate limits.</p>
+                        <span class="method-tag">Free (Local)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommended Settings -->
+            <div class="guide-block">
+                <h3>Recommended Settings</h3>
+                <div class="settings-table">
+                    <div class="setting-row">
+                        <span class="setting-name">Model</span>
+                        <span class="setting-value">FLUX Pro</span>
+                    </div>
+                    <div class="setting-row">
+                        <span class="setting-name">Aspect Ratio</span>
+                        <span class="setting-value">3:4 (Standard tarot)</span>
+                    </div>
+                    <div class="setting-row">
+                        <span class="setting-name">Guidance Scale</span>
+                        <span class="setting-value">5-6</span>
+                    </div>
+                    <div class="setting-row">
+                        <span class="setting-name">Inference Steps</span>
+                        <span class="setting-value">40-50</span>
+                    </div>
+                    <div class="setting-row">
+                        <span class="setting-name">Prompt Strength</span>
+                        <span class="setting-value">0.85-0.9</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The 4 Styles Explained -->
+            <div class="guide-block">
+                <h3>The 4 Art Styles</h3>
+                <div class="style-explained">
+                    <div class="style-card">
+                        <div class="style-header traditional">
+                            <h4>Royal Court</h4>
+                            <span class="style-badge">Classic</span>
+                        </div>
+                        <p>Traditional tarot card art with ornate gold borders, vintage 1900s illustration style, deep navy and purple color palette with gold accents. Best for: Classic Rider-Waite inspired decks.</p>
+                        <div class="color-palette">
+                            <span class="color" style="background: #1a1a2e;" title="Deep Navy"></span>
+                            <span class="color" style="background: #4a3f6b;" title="Rich Purple"></span>
+                            <span class="color" style="background: #d4af37;" title="Gold"></span>
+                            <span class="color" style="background: #f5e6d3;" title="Cream"></span>
+                        </div>
+                    </div>
+                    <div class="style-card">
+                        <div class="style-header lowbrow">
+                            <h4>Dream Walker</h4>
+                            <span class="style-badge">Pop Surrealism</span>
+                        </div>
+                        <p>Low brow pop surrealism with vibrant neon colors, thick black outlines, warped whimsical characters, and dreamlike absurd scenes. Best for: Modern, edgy collector's editions.</p>
+                        <div class="color-palette">
+                            <span class="color" style="background: #ff00ff;" title="Neon Pink"></span>
+                            <span class="color" style="background: #00ffff;" title="Cyan"></span>
+                            <span class="color" style="background: #39ff14;" title="Acid Green"></span>
+                            <span class="color" style="background: #ff8c00;" title="Bright Orange"></span>
+                        </div>
+                    </div>
+                    <div class="style-card">
+                        <div class="style-header eighties">
+                            <h4>Neon Oracle</h4>
+                            <span class="style-badge">80s Retro</span>
+                        </div>
+                        <p>80s retro surrealism with vaporwave colors, Memphis design patterns, synthwave motifs, and grid backgrounds. Best for: Retro collectors, synthwave vibes.</p>
+                        <div class="color-palette">
+                            <span class="color" style="background: #ff1493;" title="Hot Pink"></span>
+                            <span class="color" style="background: #00ced1;" title="Turquoise"></span>
+                            <span class="color" style="background: #ffa500;" title="Orange"></span>
+                            <span class="color" style="background: #ffff00;" title="Yellow"></span>
+                        </div>
+                    </div>
+                    <div class="style-card">
+                        <div class="style-header bw">
+                            <h4>Ink Mystic</h4>
+                            <span class="style-badge">Minimalist</span>
+                        </div>
+                        <p>Black and white woodcut engraving style with high contrast, intricate crosshatching, Victorian occult art aesthetic. Best for: Minimalist editions, printing purposes.</p>
+                        <div class="color-palette">
+                            <span class="color" style="background: #000;" title="Black"></span>
+                            <span class="color" style="background: #333;" title="Dark Gray"></span>
+                            <span class="color" style="background: #666;" title="Gray"></span>
+                            <span class="color" style="background: #fff; border: 1px solid #333;" title="White"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Tips -->
+            <div class="guide-block">
+                <h3>Quick Tips for Best Results</h3>
+                <ul class="tips-list">
+                    <li><strong>Consistency:</strong> Generate all cards in one session with identical settings for a cohesive deck</li>
+                    <li><strong>Word Order:</strong> FLUX reads left-to-right. Put most important elements first in your prompt</li>
+                    <li><strong>Batch Generation:</strong> Generate Major Arcana first (most important), then one suit at a time</li>
+                    <li><strong>File Naming:</strong> Save as <code>01-the-fool-traditional.webp</code> for easy organization</li>
+                    <li><strong>Post-Processing:</strong> Consider upscaling to 4K for print, adding card titles/numbers after generation</li>
+                </ul>
+            </div>
+
+            <!-- Example Workflow -->
+            <div class="guide-block">
+                <h3>Example Workflow</h3>
+                <div class="workflow">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <span class="step-text">Copy a prompt from the gallery above</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <span class="step-text">Go to your chosen platform (Replicate recommended)</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <span class="step-text">Set aspect ratio to 3:4, guidance to 5-6, steps to 40-50</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">4</span>
+                        <span class="step-text">Paste prompt and generate</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">5</span>
+                        <span class="step-text">Download and save with clear naming</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">6</span>
+                        <span class="step-text">Repeat for all 78 cards!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commercial Use -->
+            <div class="guide-block">
+                <h3>Commercial Use</h3>
+                <p class="commercial-text">You own what you create. You can sell printed decks, use in products, merchandise, and client work. You cannot resell the prompts as-is or claim AI-generated the original art.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span>Prompt copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Image mapping - maps card names to available image files
+        // Only cards with ALL 4 styles get image galleries displayed
+        const imageMap = {
+            'the-fool': {
+                traditional: 'the-fool-traditional.webp',
+                lowbrow: 'the-fool-lowbrow.webp',
+                eighties: 'the-fool-eighties.webp',
+                bw: 'the-fool-blackandwhite.webp',
+                _complete: true  // All 4 styles available
+            },
+            'the-empress': {
+                traditional: 'the-empress-traditional.webp',
+                lowbrow: 'the-empress-lowbrow.webp',
+                eighties: 'the-empress-80s.webp',
+                bw: 'the-empress-blackandwhite.webp',
+                _complete: true  // All 4 styles available
+            }
+            // Other cards have incomplete image sets - galleries hidden
+        };
+
+        // Data - Major Arcana
+        const majorArcana = [
+            {
+                number: "I",
+                name: "The Fool",
+                traditional: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, carefree expression, golden sun halo radiating behind, innocent curious look, new journey beginning, misty cliff edge background, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, carefree whimsical expression, golden sun halo, innocent weird grin, new journey beginning, surreal misty cliff, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, golden sun halo, neon glow effect, 80s style sunburst, new journey beginning, vaporwave cliff background, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, golden sun halo, innocent expression, new journey beginning, engraved linework style, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            },
+            {
+                number: "II",
+                name: "The Magician",
+                traditional: "The Magician tarot card, figure standing at stone table, one hand pointing upward to sky, one hand pointing down to earth, table displaying wand cup sword pentacle coins, infinity symbol hovering above head, red sash across robe, roses and lilies at feet, learned practitioner manifesting will into reality, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The Magician tarot card, figure standing at quirky table, one hand pointing up one hand pointing down, table with weird wand cup sword pentacle, floating infinity symbol, red sash across robe, strange mystical objects, surreal practitioner, magical manifest, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The Magician tarot card, figure standing at futuristic table, one hand pointing up one hand pointing down, neon infinity symbol above, geometric shapes for tools, synthwave practitioner, magenta and cyan color scheme, retro magic, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The Magician tarot card, figure standing at table, one hand pointing up one hand pointing down, wand cup sword pentacle on table, infinity symbol above, red sash, engraving style, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            },
+            {
+                number: "III",
+                name: "The High Priestess",
+                traditional: "The High Priestess tarot card, seated female figure on throne between two pillars, book of law on lap, crescent moon at her feet, deep blue robe, veil of waters behind, mysterious expression, hidden knowledge, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The High Priestess tarot card, weird seated queen on quirky throne, mysterious book, crescent moon weird shape, strange pillars, surreal mystical vibe, hidden knowledge, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The High Priestess tarot card, seated queen on neon throne, synthwave pillars, glowing book, retro crescent moon, vaporwave waters, mystical 80s goddess, hidden knowledge, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The High Priestess tarot card, seated figure on throne between pillars, book on lap, crescent moon at feet, engraved linework, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            }
+        ];
+
+        // Minor Arcana - Wands
+        const wandsCards = [
+            { name: "Ace of Wands", description: "Creative spark, new opportunity" },
+            { name: "Two of Wands", description: "Planning, future decisions" },
+            { name: "Three of Wands", description: "Progress, foresight" },
+            { name: "Four of Wands", description: "Celebration, harmony" },
+            { name: "Five of Wands", description: "Conflict, competition" },
+            { name: "Six of Wands", description: "Victory, recognition" },
+            { name: "Seven of Wands", description: "Defensive stance" },
+            { name: "Eight of Wands", description: "Rapid movement" },
+            { name: "Nine of Wands", description: "Resilience" },
+            { name: "Ten of Wands", description: "Burden, responsibility" },
+            { name: "Page of Wands", description: "Enthusiasm, exploration" },
+            { name: "Knight of Wands", description: "Action, adventure" },
+            { name: "Queen of Wands", description: "Confidence, leadership" },
+            { name: "King of Wands", description: "Vision, entrepreneurship" }
+        ];
+
+        // Generate prompt templates for minor arcana
+        function generateMinorPrompt(card, suit) {
+            const base = `${card.name} tarot card, ${card.description.toLowerCase()}, Rider-Waite symbolism`;
+            return {
+                traditional: `${base}. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges`,
+                lowbrow: `${base}. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange`,
+                eighties: `${base}. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic`,
+                bw: `${base}. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality`
+            };
+        }
+
+        // Create card HTML
+        function createCardHTML(card, category) {
+            const cardKey = card.name.toLowerCase().replace(/\s+/g, '-');
+            const id = `${category}-${cardKey}`;
+            const images = imageMap[cardKey] || {};
+            
+            // Only show gallery if card has complete set (all 4 styles)
+            const hasCompleteSet = images._complete === true;
+            
+            // Build image gallery HTML - only for complete sets
+            let imageGalleryHTML = '';
+            if (hasCompleteSet) {
+                imageGalleryHTML = `
+                    <div class="card-image-gallery">
+                        <div class="card-image visible" data-style="traditional" data-card="${id}">
+                            <img src="images/${images.traditional}" alt="${card.name} - Traditional" loading="lazy">
+                        </div>
+                        <div class="card-image" data-style="lowbrow" data-card="${id}">
+                            <img src="images/${images.lowbrow}" alt="${card.name} - Dream Walker" loading="lazy">
+                        </div>
+                        <div class="card-image" data-style="eighties" data-card="${id}">
+                            <img src="images/${images.eighties}" alt="${card.name} - Neon Oracle" loading="lazy">
+                        </div>
+                        <div class="card-image" data-style="bw" data-card="${id}">
+                            <img src="images/${images.bw}" alt="${card.name} - Ink Mystic" loading="lazy">
+                        </div>
+                    </div>
+                `;
+            }
+            
+            return `
+                <div class="card" data-category="${category}" data-name="${card.name.toLowerCase()}">
+                    <div class="card-header">
+                        <span class="card-title">${card.name}</span>
+                        ${card.number ? `<span class="card-number">${card.number}</span>` : ''}
+                    </div>
+                    <div class="card-body">
+                        ${imageGalleryHTML}
+                        <div class="style-tabs">
+                            <button class="style-tab traditional active" data-style="traditional" data-card="${id}">Royal Court</button>
+                            <button class="style-tab lowbrow" data-style="lowbrow" data-card="${id}">Dream Walker</button>
+                            <button class="style-tab eighties" data-style="eighties" data-card="${id}">Neon Oracle</button>
+                            <button class="style-tab bw" data-style="bw" data-card="${id}">Ink Mystic</button>
+                        </div>
+                        <div class="prompt-box">
+                            <div class="prompt-text" id="${id}-traditional">${card.traditional}</div>
+                            <div class="prompt-text hidden" id="${id}-lowbrow">${card.lowbrow}</div>
+                            <div class="prompt-text hidden" id="${id}-eighties">${card.eighties}</div>
+                            <div class="prompt-text hidden" id="${id}-bw">${card.bw}</div>
+                            <button class="copy-btn" data-card="${id}">
+                                <span>📋</span>
+                                <span>Copy Prompt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize
+        function init() {
+            // Populate Major Arcana
+            const majorContainer = document.getElementById('majorArcana');
+            majorContainer.innerHTML = majorArcana.map(card => createCardHTML(card, 'major')).join('');
+
+            // Populate Minor Arcana suits
+            ['wands', 'cups', 'swords', 'pentacles'].forEach(suit => {
+                const container = document.getElementById(`${suit}Arcana`);
+                const suitCards = wandsCards.map(card => ({
+                    ...card,
+                    ...generateMinorPrompt(card, suit)
+                }));
+                container.innerHTML = suitCards.map(card => createCardHTML(card, suit)).join('');
+            });
+
+            // Set up event listeners
+            setupEventListeners();
+        }
+
+        // Event Listeners
+        function setupEventListeners() {
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterCards(btn.dataset.filter);
+                });
+            });
+
+            // Style tabs
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('style-tab')) {
+                    const card = e.target.dataset.card;
+                    const style = e.target.dataset.style;
+                    switchStyle(card, style);
+                }
+            });
+
+            // Copy buttons
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.copy-btn')) {
+                    const btn = e.target.closest('.copy-btn');
+                    const cardId = btn.dataset.card;
+                    copyPrompt(cardId);
+                }
+            });
+
+            // Search
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchCards(e.target.value);
+            });
+        }
+
+        // Filter cards
+        function filterCards(filter) {
+            document.querySelectorAll('.category').forEach(cat => {
+                if (filter === 'all') {
+                    cat.classList.remove('hidden');
+                } else if (filter === 'minor') {
+                    cat.classList.remove('hidden', cat.dataset.category === 'major');
+                    cat.classList.toggle('hidden', cat.dataset.category === 'major');
+                } else {
+                    cat.classList.add('hidden');
+                    if (cat.dataset.category === filter) {
+                        cat.classList.remove('hidden');
+                    }
+                }
+            });
+        }
+
+        // Switch style
+        function switchStyle(cardId, style) {
+            const card = document.querySelector(`[data-card="${cardId}"]`).closest('.card');
+            
+            // Update tabs
+            card.querySelectorAll('.style-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.style === style) tab.classList.add('active');
+            });
+            
+            // Update prompt text
+            card.querySelectorAll('.prompt-text').forEach(text => {
+                text.classList.add('hidden');
+            });
+            document.getElementById(`${cardId}-${style}`).classList.remove('hidden');
+            
+            // Update visible images
+            card.querySelectorAll('.card-image').forEach(img => {
+                img.classList.remove('visible');
+                if (img.dataset.style === style && !img.classList.contains('empty')) {
+                    img.classList.add('visible');
+                }
+            });
+        }
+
+        // Copy prompt
+        async function copyPrompt(cardId) {
+            const activePrompt = document.querySelector(`#${cardId}-traditional:not(.hidden), #${cardId}-lowbrow:not(.hidden), #${cardId}-eighties:not(.hidden), #${cardId}-bw:not(.hidden)`);
+            const promptText = activePrompt?.textContent || '';
+            
+            try {
+                await navigator.clipboard.writeText(promptText);
+                showToast();
+            } catch (err) {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = promptText;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast();
+            }
+        }
+
+        // Show toast
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        // Search cards
+        function searchCards(query) {
+            const q = query.toLowerCase();
+            document.querySelectorAll('.card').forEach(card => {
+                const name = card.querySelector('.card-title').textContent.toLowerCase();
+                const promptTexts = Array.from(card.querySelectorAll('.prompt-text')).map(p => p.textContent.toLowerCase()).join(' ');
+                
+                if (name.includes(q) || promptTexts.includes(q)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>

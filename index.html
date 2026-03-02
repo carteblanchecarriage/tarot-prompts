@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLUX Tarot Prompts - 78 Cards, 4 Styles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-elevated: #1a1a25;
+            --border: #2a2a3a;
+            --text-primary: #f5f5f5;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6a6a7a;
+            --accent-gold: #d4af37;
+            --accent-purple: #8b5cf6;
+            --accent-pink: #ec4899;
+            --accent-cyan: #06b6d4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 50%);
+            animation: shimmer 10s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(-25%, -25%) rotate(0deg); }
+            50% { transform: translate(-25%, -25%) rotate(180deg); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent-gold), #f5e6d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Controls */
+        .controls {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .controls-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold);
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-gold);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-color: var(--accent-gold);
+            font-weight: 500;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border-radius: 8px;
+            width: 250px;
+            font-family: inherit;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Category Headers */
+        .category {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .category-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .category-count {
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            padding: 1rem 1.25rem;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .card-number {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 1.25rem;
+        }
+
+        /* Style Tabs */
+        .style-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .style-tab {
+            padding: 0.375rem 0.875rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .style-tab:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .style-tab.active {
+            border-color: transparent;
+        }
+
+        .style-tab.traditional.active { background: linear-gradient(135deg, #4a3f6b, #1a1a2e); color: #d4af37; }
+        .style-tab.lowbrow.active { background: linear-gradient(135deg, #ec4899, #8b5cf6); color: #fff; }
+        .style-tab.eighties.active { background: linear-gradient(135deg, #06b6d4, #f97316); color: #fff; }
+        .style-tab.bw.active { background: linear-gradient(135deg, #333, #111); color: #fff; }
+
+        /* Prompt Box */
+        .prompt-box {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            position: relative;
+        }
+
+        .prompt-text {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-height: 120px;
+            overflow-y: auto;
+            margin-bottom: 0.75rem;
+            padding-right: 0.5rem;
+        }
+
+        .prompt-text::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .prompt-text::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .copy-btn {
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--bg-dark);
+            padding: 4rem 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .guide-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .guide-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, var(--accent-gold), #f5e6d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .guide-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .guide-block h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        /* Method Cards */
+        .method-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .method-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .method-card.recommended {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .method-card.recommended::before {
+            content: 'Recommended';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .method-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .method-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .method-card p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .method-tag {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        /* Settings Table */
+        .settings-table {
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .setting-row:last-child {
+            border-bottom: none;
+        }
+
+        .setting-name {
+            color: var(--text-secondary);
+        }
+
+        .setting-value {
+            color: var(--accent-gold);
+            font-weight: 500;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Style Explained */
+        .style-explained {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .style-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .style-header {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .style-header.traditional {
+            background: linear-gradient(135deg, #4a3f6b, #1a1a2e);
+        }
+
+        .style-header.lowbrow {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6);
+        }
+
+        .style-header.eighties {
+            background: linear-gradient(135deg, #06b6d4, #f97316);
+        }
+
+        .style-header.bw {
+            background: linear-gradient(135deg, #333, #111);
+        }
+
+        .style-header h4 {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .style-badge {
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .style-card p {
+            padding: 1rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 0.5rem;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .color {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--border);
+        }
+
+        /* Tips List */
+        .tips-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        .tips-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* Workflow */
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            background: var(--accent-gold);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            color: var(--text-secondary);
+        }
+
+        /* Commercial Text */
+        .commercial-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        /* Card Image Gallery */
+        .card-image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-image {
+            aspect-ratio: 3/5;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--bg-dark);
+        }
+
+        .card-image.hidden {
+            display: none;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-image-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: var(--text-primary);
+            font-size: 0.625rem;
+            padding: 0.25rem;
+            text-align: center;
+        }
+
+        .card-image {
+            position: relative;
+        }
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            color: #10b981;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls-inner {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box input {
+                width: 100%;
+            }
+
+            .filters {
+                justify-content: center;
+            }
+        }
+
+        /* Hidden state */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">FLUX Tarot Prompts</h1>
+            <p class="tagline">78 Cards × 4 Styles = 312 Unique Prompts for AI Art Generation</p>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">78</div>
+                    <div class="stat-label">Tarot Cards</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Art Styles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">312</div>
+                    <div class="stat-label">Total Prompts</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="controls-inner">
+            <div class="nav-links">
+                <span class="nav-link" style="color: var(--text-primary); cursor: default;">Browse Cards</span>
+                <a href="guide.html" class="nav-link">How to Use →</a>
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All Cards</button>
+                <button class="filter-btn" data-filter="major">Major Arcana</button>
+                <button class="filter-btn" data-filter="minor">Minor Arcana</button>
+                <button class="filter-btn" data-filter="wands">Wands</button>
+                <button class="filter-btn" data-filter="cups">Cups</button>
+                <button class="filter-btn" data-filter="swords">Swords</button>
+                <button class="filter-btn" data-filter="pentacles">Pentacles</button>
+            </div>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search cards...">
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main" id="mainContent">
+        <!-- Major Arcana -->
+        <div class="category" data-category="major">
+            <div class="category-header">
+                <h2 class="category-title">Major Arcana</h2>
+                <span class="category-count">22 cards</span>
+            </div>
+            <div class="card-grid" id="majorArcana">
+                <!-- Cards will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Minor Arcana - Wands -->
+        <div class="category hidden" data-category="wands">
+            <div class="category-header">
+                <h2 class="category-title">Wands (Rods)</h2>
+                <span class="category-count">14 cards</span>
+            </div>
+            <div class="card-grid" id="wandsArcana">
+                <!-- Cards will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Minor Arcana - Cups -->
+        <div class="category hidden" data-category="cups">
+            <div class="category-header">
+                <h2 class="category-title">Cups</h2>
+                <span class="category-count">14 cards</span>
+            </div>
+            <div class="card-grid" id="cupsArcana">
+                <!-- Cards will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Minor Arcana - Swords -->
+        <div class="category hidden" data-category="swords">
+            <div class="category-header">
+                <h2 class="category-title">Swords</h2>
+                <span class="category-count">14 cards</span>
+            </div>
+            <div class="card-grid" id="swordsArcana">
+                <!-- Cards will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Minor Arcana - Pentacles -->
+        <div class="category hidden" data-category="pentacles">
+            <div class="category-header">
+                <h2 class="category-title">Pentacles</h2>
+                <span class="category-count">14 cards</span>
+            </div>
+            <div class="card-grid" id="pentaclesArcana">
+                <!-- Cards will be populated by JS -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Simple Footer -->
+    <footer class="footer" style="margin-top: 4rem; padding: 2rem; text-align: center; border-top: 1px solid var(--border); background: var(--bg-card);">
+        <p style="color: var(--text-secondary); font-size: 0.875rem;">FLUX Tarot Prompts — 78 Cards × 4 Styles</p>
+        <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 0.5rem;"><a href="guide.html" style="color: var(--accent-gold); text-decoration: none;">How to Use →</a></p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span>Prompt copied to clipboard!</span>
+    </div>
+
+    <script>
+        // Image mapping - maps card names to available image files
+        // Only cards with ALL 4 styles get image galleries
+        const imageMap = {
+            'the-fool': {
+                traditional: 'the-fool-traditional.webp',
+                lowbrow: 'the-fool-lowbrow.webp',
+                eighties: 'the-fool-eighties.webp',
+                bw: 'the-fool-blackandwhite.webp'
+            },
+            'the-empress': {
+                traditional: 'the-empress-traditional.webp',
+                lowbrow: 'the-empress-lowbrow.webp',
+                eighties: 'the-empress-80s.webp',
+                bw: 'the-empress-blackandwhite.webp'
+            }
+        };
+
+        // Data - Major Arcana
+        const majorArcana = [
+            {
+                number: "I",
+                name: "The Fool",
+                traditional: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, carefree expression, golden sun halo radiating behind, innocent curious look, new journey beginning, misty cliff edge background, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, carefree whimsical expression, golden sun halo, innocent weird grin, new journey beginning, surreal misty cliff, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, golden sun halo, neon glow effect, 80s style sunburst, new journey beginning, vaporwave cliff background, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, golden sun halo, innocent expression, new journey beginning, engraved linework style, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            },
+            {
+                number: "II",
+                name: "The Magician",
+                traditional: "The Magician tarot card, figure standing at stone table, one hand pointing upward to sky, one hand pointing down to earth, table displaying wand cup sword pentacle coins, infinity symbol hovering above head, red sash across robe, roses and lilies at feet, learned practitioner manifesting will into reality, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The Magician tarot card, figure standing at quirky table, one hand pointing up one hand pointing down, table with weird wand cup sword pentacle, floating infinity symbol, red sash across robe, strange mystical objects, surreal practitioner, magical manifest, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The Magician tarot card, figure standing at futuristic table, one hand pointing up one hand pointing down, neon infinity symbol above, geometric shapes for tools, synthwave practitioner, magenta and cyan color scheme, retro magic, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The Magician tarot card, figure standing at table, one hand pointing up one hand pointing down, wand cup sword pentacle on table, infinity symbol above, red sash, engraving style, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            },
+            {
+                number: "III",
+                name: "The High Priestess",
+                traditional: "The High Priestess tarot card, seated female figure on throne between two pillars, book of law on lap, crescent moon at her feet, deep blue robe, veil of waters behind, mysterious expression, hidden knowledge, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The High Priestess tarot card, weird seated queen on quirky throne, mysterious book, crescent moon weird shape, strange pillars, surreal mystical vibe, hidden knowledge, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The High Priestess tarot card, seated queen on neon throne, synthwave pillars, glowing book, retro crescent moon, vaporwave waters, mystical 80s goddess, hidden knowledge, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The High Priestess tarot card, seated figure on throne between pillars, book on lap, crescent moon at feet, engraved linework, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            },
+            {
+                number: "IV",
+                name: "The Empress",
+                traditional: "The Empress tarot card, crowned female figure on throne in wheat field, holding golden scepter, wearing flowing dress with pomegranates, heart-shaped shield, wheat sheaves and flowing water abundance, Venus symbol, mother earth fertility nurturing energy, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges",
+                lowbrow: "The Empress tarot card, crowned queen on quirky throne in neon wheat field, holding glowing scepter, surreal dress with floating pomegranates, heart-shaped shield with patterns, abundance and fertility energy, pop surrealist mother earth, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange",
+                eighties: "The Empress tarot card, crowned figure on synthwave throne, vaporwave wheat field, neon scepter, retro geometric heart shield, 80s abundance and fertility, retrofuturist mother earth, Venus vaporwave, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic",
+                bw: "The Empress tarot card, crowned female figure on throne in wheat field, holding scepter, flowing dress with pomegranates, heart shield, wheat sheaves and flowing water, fertility abundance, engraved linework,Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality"
+            }
+        ];
+
+        // Minor Arcana - Wands (Fire, Action, Creativity)
+        const wandsCards = [
+            { name: "Ace of Wands", description: "Creative spark, new opportunity, inspiration" },
+            { name: "Two of Wands", description: "Planning, future decisions, discovery" },
+            { name: "Three of Wands", description: "Progress, foresight, expansion" },
+            { name: "Four of Wands", description: "Celebration, harmony, homecoming" },
+            { name: "Five of Wands", description: "Conflict, competition, challenge" },
+            { name: "Six of Wands", description: "Victory, recognition, triumph" },
+            { name: "Seven of Wands", description: "Defensive stance, perseverance" },
+            { name: "Eight of Wands", description: "Rapid movement, quick action" },
+            { name: "Nine of Wands", description: "Resilience, last stand, grit" },
+            { name: "Ten of Wands", description: "Burden, responsibility, completion" },
+            { name: "Page of Wands", description: "Enthusiasm, exploration, free spirit" },
+            { name: "Knight of Wands", description: "Action, adventure, passion" },
+            { name: "Queen of Wands", description: "Confidence, leadership, determination" },
+            { name: "King of Wands", description: "Vision, entrepreneurship, charisma" }
+        ];
+
+        // Minor Arcana - Cups (Water, Emotion, Relationships)
+        const cupsCards = [
+            { name: "Ace of Cups", description: "New feelings, emotional awakening, love" },
+            { name: "Two of Cups", description: "Partnership, union, mutual attraction" },
+            { name: "Three of Cups", description: "Celebration, friendship, community" },
+            { name: "Four of Cups", description: "Contemplation, reevaluation, apathy" },
+            { name: "Five of Cups", description: "Loss, grief, disappointment" },
+            { name: "Six of Cups", description: "Nostalgia, childhood memories, innocence" },
+            { name: "Seven of Cups", description: "Choices, imagination, wishes" },
+            { name: "Eight of Cups", description: "Walking away, seeking deeper meaning" },
+            { name: "Nine of Cups", description: "Contentment, satisfaction, wish fulfilled" },
+            { name: "Ten of Cups", description: "Emotional fulfillment, family harmony" },
+            { name: "Page of Cups", description: "Creative beginnings, intuitive messages" },
+            { name: "Knight of Cups", description: "Romantic pursuit, charm, idealism" },
+            { name: "Queen of Cups", description: "Compassion, intuition, emotional depth" },
+            { name: "King of Cups", description: "Emotional balance, wisdom, diplomacy" }
+        ];
+
+        // Minor Arcana - Swords (Air, Intellect, Conflict)
+        const swordsCards = [
+            { name: "Ace of Swords", description: "Clarity, breakthrough, new idea" },
+            { name: "Two of Swords", description: "Indecision, stalemate, difficult choices" },
+            { name: "Three of Swords", description: "Heartbreak, sorrow, grief" },
+            { name: "Four of Swords", description: "Rest, recuperation, contemplation" },
+            { name: "Five of Swords", description: "Conflict, defeat, hollow victory" },
+            { name: "Six of Swords", description: "Transition, moving on, healing" },
+            { name: "Seven of Swords", description: "Deception, strategy, stealth" },
+            { name: "Eight of Swords", description: "Restriction, imprisonment, self-victimization" },
+            { name: "Nine of Swords", description: "Anxiety, nightmares, worry" },
+            { name: "Ten of Swords", description: "Painful endings, defeat, crisis" },
+            { name: "Page of Swords", description: "Curiosity, new ideas, thirst for knowledge" },
+            { name: "Knight of Swords", description: "Action, impulsiveness, drive" },
+            { name: "Queen of Swords", description: "Independence, unbiased judgment, clear boundaries" },
+            { name: "King of Swords", description: "Intellectual power, authority, truth" }
+        ];
+
+        // Minor Arcana - Pentacles (Earth, Material, Physical)
+        const pentaclesCards = [
+            { name: "Ace of Pentacles", description: "New financial opportunity, manifestation" },
+            { name: "Two of Pentacles", description: "Balance, adaptability, time management" },
+            { name: "Three of Pentacles", description: "Teamwork, collaboration, skill mastery" },
+            { name: "Four of Pentacles", description: "Security, conservation, frugality" },
+            { name: "Five of Pentacles", description: "Financial loss, poverty, isolation" },
+            { name: "Six of Pentacles", description: "Generosity, charity, giving and receiving" },
+            { name: "Seven of Pentacles", description: "Patience, investment, long-term view" },
+            { name: "Eight of Pentacles", description: "Apprenticeship, repetitive tasks, mastery" },
+            { name: "Nine of Pentacles", description: "Abundance, luxury, self-sufficiency" },
+            { name: "Ten of Pentacles", description: "Wealth, inheritance, family legacy" },
+            { name: "Page of Pentacles", description: "Manifestation, financial opportunity, ambition" },
+            { name: "Knight of Pentacles", description: "Efficiency, routine, conservatism" },
+            { name: "Queen of Pentacles", description: "Nurturing, practicality, financial security" },
+            { name: "King of Pentacles", description: "Abundance, prosperity, security" }
+        ];
+
+        // Generate prompt templates for minor arcana
+        function generateMinorPrompt(card, suit) {
+            const base = `${card.name} tarot card, ${card.description.toLowerCase()}, Rider-Waite symbolism`;
+            return {
+                traditional: `${base}. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges`,
+                lowbrow: `${base}. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange`,
+                eighties: `${base}. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic`,
+                bw: `${base}. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality`
+            };
+        }
+
+        // Create card HTML
+        function createCardHTML(card, category) {
+            const cardKey = card.name.toLowerCase().replace(/\s+/g, '-');
+            const id = `${category}-${cardKey}`;
+            const images = imageMap[cardKey] || {};
+            
+            // Check if this card has ANY images (for sample display)
+            const hasImages = Object.keys(images).length > 0;
+            
+            // Build image gallery HTML - show ALL images at once (2x2 grid for 4 images)
+            let imageGalleryHTML = '';
+            if (hasImages) {
+                const imgTraditional = images.traditional ? `<div class="card-image visible" data-style="traditional" data-card="${id}"><img src="images/${images.traditional}" alt="${card.name} - Traditional" loading="lazy"></div>` : '';
+                const imgLowbrow = images.lowbrow ? `<div class="card-image visible" data-style="lowbrow" data-card="${id}"><img src="images/${images.lowbrow}" alt="${card.name} - Dream Walker" loading="lazy"></div>` : '';
+                const imgEighties = images.eighties ? `<div class="card-image visible" data-style="eighties" data-card="${id}"><img src="images/${images.eighties}" alt="${card.name} - Neon Oracle" loading="lazy"></div>` : '';
+                const imgBw = images.bw ? `<div class="card-image visible" data-style="bw" data-card="${id}"><img src="images/${images.bw}" alt="${card.name} - Ink Mystic" loading="lazy"></div>` : '';
+                
+                // Count how many images we have
+                const imgCount = [imgTraditional, imgLowbrow, imgEighties, imgBw].filter(img => img !== '').length;
+                
+                if (imgCount > 0) {
+                    // 2x2 grid for 4 images, otherwise adapt
+                    const cols = imgCount === 4 ? 2 : (imgCount <= 2 ? imgCount : 3);
+                    imageGalleryHTML = `
+                        <div class="card-image-gallery" style="grid-template-columns: repeat(${cols}, 1fr);">
+                            ${imgTraditional}${imgLowbrow}${imgEighties}${imgBw}
+                        </div>
+                    `;
+                }
+            }
+            
+            return `
+                <div class="card" data-category="${category}" data-name="${card.name.toLowerCase()}">
+                    <div class="card-header">
+                        <span class="card-title">${card.name}</span>
+                        ${card.number ? `<span class="card-number">${card.number}</span>` : ''}
+                    </div>
+                    <div class="card-body">
+                        ${imageGalleryHTML}
+                        <div class="style-tabs">
+                            <button class="style-tab traditional active" data-style="traditional" data-card="${id}">Royal Court</button>
+                            <button class="style-tab lowbrow" data-style="lowbrow" data-card="${id}">Dream Walker</button>
+                            <button class="style-tab eighties" data-style="eighties" data-card="${id}">Neon Oracle</button>
+                            <button class="style-tab bw" data-style="bw" data-card="${id}">Ink Mystic</button>
+                        </div>
+                        <div class="prompt-box">
+                            <div class="prompt-text" id="${id}-traditional">${card.traditional}</div>
+                            <div class="prompt-text hidden" id="${id}-lowbrow">${card.lowbrow}</div>
+                            <div class="prompt-text hidden" id="${id}-eighties">${card.eighties}</div>
+                            <div class="prompt-text hidden" id="${id}-bw">${card.bw}</div>
+                            <button class="copy-btn" data-card="${id}">
+                                <span>📋</span>
+                                <span>Copy Prompt</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize
+        function init() {
+            // Populate Major Arcana
+            const majorContainer = document.getElementById('majorArcana');
+            majorContainer.innerHTML = majorArcana.map(card => createCardHTML(card, 'major')).join('');
+
+            // Populate Minor Arcana - Wands
+            const wandsContainer = document.getElementById('wandsArcana');
+            const wandsData = wandsCards.map(card => ({
+                ...card,
+                ...generateMinorPrompt(card, 'wands')
+            }));
+            wandsContainer.innerHTML = wandsData.map(card => createCardHTML(card, 'wands')).join('');
+
+            // Populate Minor Arcana - Cups
+            const cupsContainer = document.getElementById('cupsArcana');
+            const cupsData = cupsCards.map(card => ({
+                ...card,
+                ...generateMinorPrompt(card, 'cups')
+            }));
+            cupsContainer.innerHTML = cupsData.map(card => createCardHTML(card, 'cups')).join('');
+
+            // Populate Minor Arcana - Swords
+            const swordsContainer = document.getElementById('swordsArcana');
+            const swordsData = swordsCards.map(card => ({
+                ...card,
+                ...generateMinorPrompt(card, 'swords')
+            }));
+            swordsContainer.innerHTML = swordsData.map(card => createCardHTML(card, 'swords')).join('');
+
+            // Populate Minor Arcana - Pentacles
+            const pentaclesContainer = document.getElementById('pentaclesArcana');
+            const pentaclesData = pentaclesCards.map(card => ({
+                ...card,
+                ...generateMinorPrompt(card, 'pentacles')
+            }));
+            pentaclesContainer.innerHTML = pentaclesData.map(card => createCardHTML(card, 'pentacles')).join('');
+
+            // Set up event listeners
+            setupEventListeners();
+        }
+
+        // Event Listeners
+        function setupEventListeners() {
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterCards(btn.dataset.filter);
+                });
+            });
+
+            // Style tabs
+            document.addEventListener('click', (e) => {
+                if (e.target.classList.contains('style-tab')) {
+                    const card = e.target.dataset.card;
+                    const style = e.target.dataset.style;
+                    switchStyle(card, style);
+                }
+            });
+
+            // Copy buttons
+            document.addEventListener('click', (e) => {
+                if (e.target.closest('.copy-btn')) {
+                    const btn = e.target.closest('.copy-btn');
+                    const cardId = btn.dataset.card;
+                    copyPrompt(cardId);
+                }
+            });
+
+            // Search
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                searchCards(e.target.value);
+            });
+        }
+
+        // Filter cards
+        function filterCards(filter) {
+            document.querySelectorAll('.category').forEach(cat => {
+                if (filter === 'all') {
+                    cat.classList.remove('hidden');
+                } else if (filter === 'minor') {
+                    cat.classList.remove('hidden', cat.dataset.category === 'major');
+                    cat.classList.toggle('hidden', cat.dataset.category === 'major');
+                } else {
+                    cat.classList.add('hidden');
+                    if (cat.dataset.category === filter) {
+                        cat.classList.remove('hidden');
+                    }
+                }
+            });
+        }
+
+        // Switch style
+        function switchStyle(cardId, style) {
+            const card = document.querySelector(`[data-card="${cardId}"]`).closest('.card');
+            
+            // Update tabs
+            card.querySelectorAll('.style-tab').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.style === style) tab.classList.add('active');
+            });
+            
+            // Update prompt text
+            card.querySelectorAll('.prompt-text').forEach(text => {
+                text.classList.add('hidden');
+            });
+            document.getElementById(`${cardId}-${style}`).classList.remove('hidden');
+            
+            // Images stay visible - all 4 shown at once
+        }
+
+        // Copy prompt
+        async function copyPrompt(cardId) {
+            const activePrompt = document.querySelector(`#${cardId}-traditional:not(.hidden), #${cardId}-lowbrow:not(.hidden), #${cardId}-eighties:not(.hidden), #${cardId}-bw:not(.hidden)`);
+            const promptText = activePrompt?.textContent || '';
+            
+            try {
+                await navigator.clipboard.writeText(promptText);
+                showToast();
+            } catch (err) {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = promptText;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast();
+            }
+        }
+
+        // Show toast
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2000);
+        }
+
+        // Search cards
+        function searchCards(query) {
+            const q = query.toLowerCase();
+            document.querySelectorAll('.card').forEach(card => {
+                const name = card.querySelector('.card-title').textContent.toLowerCase();
+                const promptTexts = Array.from(card.querySelectorAll('.prompt-text')).map(p => p.textContent.toLowerCase()).join(' ');
+                
+                if (name.includes(q) || promptTexts.includes(q)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Start
+        init();
+    </script>
+</body>
+</html>
