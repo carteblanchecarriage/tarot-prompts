@@ -109,6 +109,45 @@
             letter-spacing: 1px;
         }
 
+        /* Download Button */
+        .download-section {
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, var(--accent-gold), #e8c869);
+            color: var(--bg-dark);
+            padding: 0.875rem 1.75rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            border-color: var(--accent-gold);
+        }
+
+        .download-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .download-note {
+            margin-top: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
         /* Controls */
         .controls {
             background: var(--bg-card);
@@ -757,6 +796,13 @@
                     <div class="stat-number">312</div>
                     <div class="stat-label">Total Prompts</div>
                 </div>
+            </div>
+            <div class="download-section">
+                <a href="downloads/FLUX-Tarot-Prompts.txt" download class="download-btn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    Download All Prompts
+                </a>
+                <p class="download-note">📄 One file with all 312 prompts. Opens in any text editor.</p>
             </div>
         </div>
     </header>

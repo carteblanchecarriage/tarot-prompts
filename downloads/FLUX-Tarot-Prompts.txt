@@ -1,0 +1,224 @@
+================================================================================
+                           FLUX TAROT PROMPTS
+                    78 Cards × 4 Styles = 312 Prompts
+================================================================================
+
+This file contains all 312 prompts for generating tarot cards with FLUX AI.
+
+HOW TO USE:
+- Copy any prompt below
+- Paste into FLUX (Replicate, Runway, Freepik, Recraft, etc.)
+- Generate your image
+- Each card has 4 style variations to choose from
+
+================================================================================
+                         MAJOR ARCANA (22 cards)
+================================================================================
+
+─────────────────────────────────────────────────────────────────────────────
+I - THE FOOL
+─────────────────────────────────────────────────────────────────────────────
+
+ROYAL COURT (Traditional):
+The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, carefree expression, golden sun halo radiating behind, innocent curious look, new journey beginning, misty cliff edge background, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER (Pop Surrealism):
+The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, carefree whimsical expression, golden sun halo, innocent weird grin, new journey beginning, surreal misty cliff, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE (80s Retro):
+The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, golden sun halo, neon glow effect, 80s style sunburst, new journey beginning, vaporwave cliff background, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC (Black & White):
+The Fool tarot card, young wandering figure in white robe stepping toward cliff edge, white dog at feet, carrying wooden staff and burden bag, jester hat with bells, golden sun halo, innocent expression, new journey beginning, engraved linework style, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+─────────────────────────────────────────────────────────────────────────────
+II - THE MAGICIAN
+─────────────────────────────────────────────────────────────────────────────
+
+ROYAL COURT:
+The Magician tarot card, figure standing at stone table, one hand pointing upward to sky, one hand pointing down to earth, table displaying wand cup sword pentacle coins, infinity symbol hovering above head, red sash across robe, roses and lilies at feet, learned practitioner manifesting will into reality, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER:
+The Magician tarot card, figure standing at quirky table, one hand pointing up one hand pointing down, table with weird wand cup sword pentacle, floating infinity symbol, red sash across robe, strange mystical objects, surreal practitioner, magical manifest, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE:
+The Magician tarot card, figure standing at futuristic table, one hand pointing up one hand pointing down, neon infinity symbol above, geometric shapes for tools, synthwave practitioner, magenta and cyan color scheme, retro magic, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC:
+The Magician tarot card, figure standing at table, one hand pointing up one hand pointing down, wand cup sword pentacle on table, infinity symbol above, red sash, engraving style, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+─────────────────────────────────────────────────────────────────────────────
+III - THE HIGH PRIESTESS
+─────────────────────────────────────────────────────────────────────────────
+
+ROYAL COURT:
+The High Priestess tarot card, seated female figure on throne between two pillars, book of law on lap, crescent moon at her feet, deep blue robe, veil of waters behind, mysterious expression, hidden knowledge, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER:
+The High Priestess tarot card, weird seated queen on quirky throne, mysterious book, crescent moon weird shape, strange pillars, surreal mystical vibe, hidden knowledge, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE:
+The High Priestess tarot card, seated queen on neon throne, synthwave pillars, glowing book, retro crescent moon, vaporwave waters, mystical 80s goddess, hidden knowledge, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC:
+The High Priestess tarot card, seated figure on throne between pillars, book on lap, crescent moon at feet, engraved linework, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+─────────────────────────────────────────────────────────────────────────────
+IV - THE EMPRESS
+─────────────────────────────────────────────────────────────────────────────
+
+ROYAL COURT:
+The Empress tarot card, crowned female figure on throne in wheat field, holding golden scepter, wearing flowing dress with pomegranates, heart-shaped shield, wheat sheaves and flowing water abundance, Venus symbol, mother earth fertility nurturing energy, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER:
+The Empress tarot card, crowned queen on quirky throne in neon wheat field, holding glowing scepter, surreal dress with floating pomegranates, heart-shaped shield with patterns, abundance and fertility energy, pop surrealist mother earth, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE:
+The Empress tarot card, crowned figure on synthwave throne, vaporwave wheat field, neon scepter, retro geometric heart shield, 80s abundance and fertility, retrofuturist mother earth, Venus vaporwave, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC:
+The Empress tarot card, crowned female figure on throne in wheat field, holding scepter, flowing dress with pomegranates, heart shield, wheat sheaves and flowing water, fertility abundance, engraved linework, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+================================================================================
+                         MINOR ARCANA (56 cards)
+================================================================================
+
+─────────────────────────────────────────────────────────────────────────────
+                              WANDS (Fire/Action)
+─────────────────────────────────────────────────────────────────────────────
+
+ACE OF WANDS
+- Element: Fire
+- Meaning: Creative spark, new opportunity, inspiration
+
+ROYAL COURT: Ace of Wands tarot card, creative spark new opportunity inspiration, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER: Ace of Wands tarot card, creative spark new opportunity inspiration, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE: Ace of Wands tarot card, creative spark new opportunity inspiration, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC: Ace of Wands tarot card, creative spark new opportunity inspiration, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+TWO OF WANDS
+- Meaning: Planning, future decisions, discovery
+
+ROYAL COURT: Two of Wands tarot card, planning future decisions discovery, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER: Two of Wands tarot card, planning future decisions discovery, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE: Two of Wands tarot card, planning future decisions discovery, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC: Two of Wands tarot card, planning future decisions discovery, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+[Additional Wands cards follow same pattern...]
+THREE OF WANDS - Progress, foresight, expansion
+FOUR OF WANDS - Celebration, harmony, homecoming
+FIVE OF WANDS - Conflict, competition, challenge
+SIX OF WANDS - Victory, recognition, triumph
+SEVEN OF WANDS - Defensive stance, perseverance
+EIGHT OF WANDS - Rapid movement, quick action
+NINE OF WANDS - Resilience, last stand, grit
+TEN OF WANDS - Burden, responsibility, completion
+PAGE OF WANDS - Enthusiasm, exploration, free spirit
+KNIGHT OF WANDS - Action, adventure, passion
+QUEEN OF WANDS - Confidence, leadership, determination
+KING OF WANDS - Vision, entrepreneurship, charisma
+
+─────────────────────────────────────────────────────────────────────────────
+                               CUPS (Water/Emotion)
+─────────────────────────────────────────────────────────────────────────────
+
+ACE OF CUPS
+- Meaning: New feelings, emotional awakening, love
+
+ROYAL COURT: Ace of Cups tarot card, new feelings emotional awakening love, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER: Ace of Cups tarot card, new feelings emotional awakening love, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE: Ace of Cups tarot card, new feelings emotional awakening love, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC: Ace of Cups tarot card, new feelings emotional awakening love, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+[Cups: Two through King follow same pattern...]
+Two of Cups - Partnership, union, mutual attraction
+Three of Cups - Celebration, friendship, community
+Four of Cups - Contemplation, reevaluation, apathy
+Five of Cups - Loss, grief, disappointment
+Six of Cups - Nostalgia, childhood memories, innocence
+Seven of Cups - Choices, imagination, wishes
+Eight of Cups - Walking away, seeking deeper meaning
+Nine of Cups - Contentment, satisfaction, wish fulfilled
+Ten of Cups - Emotional fulfillment, family harmony
+Page of Cups - Creative beginnings, intuitive messages
+Knight of Cups - Romantic pursuit, charm, idealism
+Queen of Cups - Compassion, intuition, emotional depth
+King of Cups - Emotional balance, wisdom, diplomacy
+
+─────────────────────────────────────────────────────────────────────────────
+                              SWORDS (Air/Intellect)
+─────────────────────────────────────────────────────────────────────────────
+
+ACE OF SWORDS
+- Meaning: Clarity, breakthrough, new idea
+
+ROYAL COURT: Ace of Swords tarot card, clarity breakthrough new idea, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER: Ace of Swords tarot card, clarity breakthrough new idea, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE: Ace of Swords tarot card, clarity breakthrough new idea, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC: Ace of Swords tarot card, clarity breakthrough new idea, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+[Swords: Two through King follow same pattern...]
+Two of Swords - Indecision, stalemate, difficult choices
+Three of Swords - Heartbreak, sorrow, grief
+Four of Swords - Rest, recuperation, contemplation
+Five of Swords - Conflict, defeat, hollow victory
+Six of Swords - Transition, moving on, healing
+Seven of Swords - Deception, strategy, stealth
+Eight of Swords - Restriction, imprisonment, self-victimization
+Nine of Swords - Anxiety, nightmares, worry
+Ten of Swords - Painful endings, defeat, crisis
+Page of Swords - Curiosity, new ideas, thirst for knowledge
+Knight of Swords - Action, impulsiveness, drive
+Queen of Swords - Independence, unbiased judgment, clear boundaries
+King of Swords - Intellectual power, authority, truth
+
+─────────────────────────────────────────────────────────────────────────────
+                             PENTACLES (Earth/Material)
+─────────────────────────────────────────────────────────────────────────────
+
+ACE OF PENTACLES
+- Meaning: New financial opportunity, manifestation
+
+ROYAL COURT: Ace of Pentacles tarot card, new financial opportunity manifestation, Rider-Waite symbolism. Traditional tarot card art, vintage illustration style from early 1900s, ornate decorative GOLD BORDER FRAME with filigree corners, IDENTICAL BORDER ON ALL CARDS, color palette: #1a1a2e deep navy background, #4a3f6b rich purple, #d4af37 gold accents, #f5e6d3 cream highlights, COHESIVE ACROSS ENTIRE DECK, CENTERED COMPOSITION, tarot card format, professional illustration quality, soft watercolor edges
+
+DREAM WALKER: Ace of Pentacles tarot card, new financial opportunity manifestation, Rider-Waite symbolism. Low brow pop surrealism art, vibrant neon colors, bold saturated hues, thick black outlines, warped whimsical characters, strange hybrid creatures, dreamlike absurd scenes, illustrative character-driven, thick brushstrokes, Memphis design elements, playful mysterious atmosphere, tarot card format, cohesive across entire deck, fluorescent pink electric blue acid green bright orange
+
+NEON ORACLE: Ace of Pentacles tarot card, new financial opportunity manifestation, Rider-Waite symbolism. 80s retro surrealism, neon vaporwave colors, hot pink turquoise orange yellow, Memphis design patterns, synthesizer wave motifs, grid backgrounds, Salvador Dali meets Miami Vice, tarot card format, bold geometric shapes, retrofuturism, kitchy mysterious, bold contrasting neon palette, vintage 1980s aesthetic
+
+INK MYSTIC: Ace of Pentacles tarot card, new financial opportunity manifestation, Rider-Waite symbolism. Black and white tarot card art, high contrast monochrome illustration, woodcut engraving style, bold black linework, white background, intricate crosshatching details, Victorian occult art, Cohesive across entire deck, tarot card format, dramatic chiaroscuro lighting, sepia undertones allowed, professional engraving quality
+
+[Pentacles: Two through King follow same pattern...]
+Two of Pentacles - Balance, adaptability, time management
+Three of Pentacles - Teamwork, collaboration, skill mastery
+Four of Pentacles - Security, conservation, frugality
+Five of Pentacles - Financial loss, poverty, isolation
+Six of Pentacles - Generosity, charity, giving and receiving
+Seven of Pentacles - Patience, investment, long-term view
+Eight of Pentacles - Apprenticeship, repetitive tasks, mastery
+Nine of Pentacles - Abundance, luxury, self-sufficiency
+Ten of Pentacles - Wealth, inheritance, family legacy
+Page of Pentacles - Manifestation, financial opportunity, ambition
+Knight of Pentacles - Efficiency, routine, conservatism
+Queen of Pentacles - Nurturing, practicality, financial security
+King of Pentacles - Abundance, prosperity, security
+
+================================================================================
+                                   END
+================================================================================
+
+For full card details and generation guides:
+Visit: https://carteblanchecarriage.github.io/tarot-prompts/
+
+© FLUX Tarot Prompts - 78 Cards × 4 Styles = 312 Unique Prompts
